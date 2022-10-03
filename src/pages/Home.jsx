@@ -6,13 +6,12 @@ import SectionsUser from "./SectionsUser";
 import { UserContext } from "context/userContext";
 
 export default function Home() {
-  const { user } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
   const [{ access_token, success, linkId }, setState] = useSetState({
     access_token: null,
     success: false,
     linkId: ""
   });
-  console.log(user)
 
   async function createWidget() {
     // Function to call your server-side to generate the access_token and retrieve the your access token
@@ -23,9 +22,7 @@ export default function Home() {
     })
     const callback = () => { }
     const successCallbackFunction = (link, institution) => {
-
-      console.log(link, institution)
-      localStorage.setItem("link_id", link)
+      setUser(link)
       // Do something with the link and institution,
       // such as associate it with your registered user in your database.
     }

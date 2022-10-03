@@ -91,7 +91,7 @@ export default function SectionsUser({ linkId: link_id }) {
       setState({ data: res, loading: false, table: "balances" })
     })
   }
-  console.log(loading)
+
   return (
     <div className="cont_sections_user">
       {loading ? <Spin indicator={antIcon} /> :

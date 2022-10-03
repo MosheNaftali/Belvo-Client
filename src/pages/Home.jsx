@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div>
-      {user ? <button onClick={createWidget}>Conectar</button> :
+      {!user ? <button onClick={createWidget}>Conectar</button> :
         <div className="cont_platform">
           <SectionsUser linkId={user} />
         </div>

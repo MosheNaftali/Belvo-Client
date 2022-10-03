@@ -11,9 +11,14 @@ export default function UserProvider({ children }) {
     if (localStorage.getItem("link_id")) setUser(localStorage.getItem("link_id"))
   }, [])
 
+  const onConnect = (link) => {
+    localStorage.setItem("link_id", link);
+    setUser(link);
+  }
+
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, onConnect }}>
       {children}
     </UserContext.Provider>
   )

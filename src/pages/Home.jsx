@@ -6,7 +6,7 @@ import SectionsUser from "./SectionsUser";
 import { UserContext } from "context/userContext";
 
 export default function Home() {
-  const { user, setUser } = useContext(UserContext)
+  const { user, onConnect } = useContext(UserContext)
   const [{ access_token, success, linkId }, setState] = useSetState({
     access_token: null,
     success: false,
@@ -22,7 +22,7 @@ export default function Home() {
     })
     const callback = () => { }
     const successCallbackFunction = (link, institution) => {
-      setUser(link)
+      onConnect(link)
       // Do something with the link and institution,
       // such as associate it with your registered user in your database.
     }
@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div>
-      {!localStorage.getItem('link_id') ? <button onClick={createWidget}>Conectar</button> :
+      {user ? <button onClick={createWidget}>Conectar</button> :
         <div className="cont_platform">
           <SectionsUser linkId={user} />
         </div>

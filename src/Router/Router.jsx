@@ -3,9 +3,6 @@ import {
   Route,
 } from "react-router-dom";
 
-import PrivateRoute from "Router/PrivateRoute";
-import SuperPrivateRoute from "Router/SuperPrivateRoute";
-
 import Home from "pages/Home";
 
 export default function Router() {

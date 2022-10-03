@@ -1,17 +1,11 @@
 import { get } from "api";
 import { useContext } from "react";
-import axios from "axios";
-import { useSetState } from 'react-use';
+
 import SectionsUser from "./SectionsUser";
 import { UserContext } from "context/userContext";
 
 export default function Home() {
   const { user, onConnect } = useContext(UserContext)
-  const [{ access_token, success, linkId }, setState] = useSetState({
-    access_token: null,
-    success: false,
-    linkId: ""
-  });
 
   async function createWidget() {
     // Function to call your server-side to generate the access_token and retrieve the your access token

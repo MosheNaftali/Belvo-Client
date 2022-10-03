@@ -1,5 +1,3 @@
-import { get } from "api";
-
 const { createContext, useEffect, useState } = require("react");
 
 const UserContext = createContext({ user: {}, setUser: () => { } })

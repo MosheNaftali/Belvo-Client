@@ -2,7 +2,7 @@ import { post } from "api"
 import Button from "components/Button";
 import dayjs from "dayjs"
 import { useSetState } from 'react-use';
-import { Space, Table, Tag } from 'antd';
+import { Table } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
 
